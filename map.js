@@ -1,4 +1,3 @@
-
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
@@ -6,7 +5,7 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+  var markers = [];
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -33.8688, lng: 151.2195},
@@ -32,7 +31,7 @@ function initAutocomplete() {
     searchBox.setBounds(map.getBounds());
   });
 
-  var markers = [];
+
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', function() {
@@ -84,7 +83,31 @@ function initAutocomplete() {
   });
 }
 
+function middle() {
+  var totalLat =0;
+  var totalLng =0;
 
+  var thing = JSON.stringify(markers[0]["position"]).replace("(", "{");
+  thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
+  console.log("Thing is: " + thing);
+  //position = position.replace("(", "{");
+  //position = position.replace(")", "}");
+  for (var i=0;i < markers.length; i +=1){
+    var thing = JSON.stringify(markers[i]["position"]).replace("(", "{");
+    thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
+    console.log(thing[0]);
+    totalLat += thing.lat;
+    totalLat += thing.lng;
+    console.log("for loop " + i + " lat: " + thing[0].lat);
+    totalLng += markers[i]["position"][1];
+  }
+  var latAvg = totalLat/markers.length;
+  var lngAvg = totalLng/markers.length;
+  console.log("position: " + markers[0]["position"]);
+  console.log("position: " + markers[0]["position"][0]);
+  console.log("lngAvg= " + lngAvg);
+  console.log("totalLat= " + totalLat );
+}
 
 function clear() {
         markers(null);
