@@ -1,0 +1,38 @@
+body {
+  background-color: LemonChiffon;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: navajowhite;
+    text-align: center;
+}
+
+#center {
+  padding-right: 35%;
+  float: right;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    font-size: 40px;
+    display: block;
+    color: indigo;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: orange;
+}
+
+p {
+  text-align: center;
+}
