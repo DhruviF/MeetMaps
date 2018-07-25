@@ -47,7 +47,6 @@ function initAutocomplete() {
   //  });
 
 
-    markers = [];
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
@@ -71,7 +70,7 @@ function initAutocomplete() {
         title: place.name,
         position: place.geometry.location
       }));
-
+      console.log("markers: " + markers)
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
@@ -86,27 +85,31 @@ function initAutocomplete() {
 function middle() {
   var totalLat =0;
   var totalLng =0;
-
-  var thing = JSON.stringify(markers[0]["position"]).replace("(", "{");
-  thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
-  console.log("Thing is: " + thing);
+  //var thing = JSON.stringify(markers[0]["position"]).replace("(", "{");
+  //thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
+  //console.log("Thing is: " + thing);
   //position = position.replace("(", "{");
   //position = position.replace(")", "}");
   for (var i=0;i < markers.length; i +=1){
-    var thing = JSON.stringify(markers[i]["position"]).replace("(", "{");
-    thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
-    console.log(thing[0]);
-    totalLat += thing.lat;
-    totalLat += thing.lng;
-    console.log("for loop " + i + " lat: " + thing[0].lat);
-    totalLng += markers[i]["position"][1];
+    //var thing = JSON.stringify(markers[i].["position"]).replace("(", "{");
+    //thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
+    //console.log(thing[0]);
+
+    totalLat += markers[i].getPosition().lat();
+    console.log("for loop: " + i + " lat: "+totalLat)
+    //console.log("for loop " + i + " lat: " + thing[0].lat);
+    totalLng += markers[i].getPosition().lng();
+    console.log("for loop: " + i + " lat: "+totalLng)
   }
   var latAvg = totalLat/markers.length;
   var lngAvg = totalLng/markers.length;
-  console.log("position: " + markers[0]["position"]);
-  console.log("position: " + markers[0]["position"][0]);
+  //console.log("position: " + markers[0]["position"]);
+  //console.log("position: " + markers[0]["position"][0]);
   console.log("lngAvg= " + lngAvg);
+  console.log("totalLng= " + totalLng );
+  console.log("latgAvg= " + latAvg);
   console.log("totalLat= " + totalLat );
+
 }
 
 function clear() {
