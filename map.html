@@ -5,6 +5,8 @@
       type="image/png"
       href="favicon.png"
       >
+
+<!--key is AIzaSyDFa5amzSYezacpQVUQENxUykI_T4O1sGI-->
     <link rel="stylesheet" href = "map.css">
     <script src="map.js"></script>
     <title>Meet w/ Maps</title>
@@ -18,29 +20,27 @@
   </head>
   <body>
       <ul>
-           <li><a href="map.html"><img src="favicon.png" style="width:45px;height:50px" a class="active"></a></li>
+           <li><a href="#map.html"><img src="logo.png" style="width:120px;height:80px" a class="active"></a></li>
            <div id ="center">
-           <li><a href="#meetmap">Map</a></li>
-           <li><a href="#hotspots">Hot Spots</a></li>
+           <li><a href="#news">Map</a></li>
+           <li><a href="#contact">Hot Spots</a></li>
            <li><a href="#about">About</a></li>
-         </div>
-         </ul>
+           </div>
+     </ul>
     <!--The div element for the map -->
     <div id="map"></div>
-    <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 37.404031, lng: -122.034975};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 9, center: uluru});
-  // The marker, positioned at Uluru
-  //var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <script async defer>
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFa5amzSYezacpQVUQENxUykI_T4O1sGI&callback=initMap">
-    </script>
+
   </body>
-</html>
+
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFa5amzSYezacpQVUQENxUykI_T4O1sGI&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+
+<button onclick="clear()"> clear </button>
+  
+  
+  </html>
