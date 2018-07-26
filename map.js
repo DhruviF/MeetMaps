@@ -5,11 +5,11 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-  var markers = [];
+var markers = [];
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 37.404001, lng: -122.034976},37.404001, -122.034976
-    zoom: 9,
+    center: {lat: 37.404001, lng: -122.034976},
+    zoom: 13,
     mapTypeId: 'roadmap'
   });
 
@@ -109,6 +109,7 @@ function middle() {
   console.log("totalLng= " + totalLng );
   console.log("latgAvg= " + latAvg);
   console.log("totalLat= " + totalLat );
+  console.log(latAvg + ", " + lngAvg);
 
 }
 
