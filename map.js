@@ -9,7 +9,7 @@ var markers = [];
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.404001, lng: -122.034976},
-    zoom: 13,
+    zoom: 9,
     mapTypeId: 'roadmap'
   });
 
@@ -41,12 +41,10 @@ function initAutocomplete() {
       return;
     }
 
-    // Clear out the old markers.
+  // Clear out the old markers.
   //markers.forEach(function(marker) {
   //   marker.setMap(null);
   //  });
-
-
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
@@ -85,21 +83,15 @@ function initAutocomplete() {
 function middle() {
   var totalLat =0;
   var totalLng =0;
-  //var thing = JSON.stringify(markers[0]["position"]).replace("(", "{");
-  //thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
-  //console.log("Thing is: " + thing);
-  //position = position.replace("(", "{");
-  //position = position.replace(")", "}");
   for (var i=0;i < markers.length; i +=1){
-    //var thing = JSON.stringify(markers[i].["position"]).replace("(", "{");
-    //thing = JSON.stringify(markers[0]["position"]).replace(")", "}");
-    //console.log(thing[0]);
+    var newlat=markers[i].getPosition().lat();
+    console.log(markers[i].getPosition().lat())
+    totalLat = totalLat+ newlat;
 
-    totalLat += markers[i].getPosition().lat();
-    console.log("for loop: " + i + " lat: "+totalLat)
-    //console.log("for loop " + i + " lat: " + thing[0].lat);
+    console.log("for loop: " + i + " lat: "+totalLat);
+
     totalLng += markers[i].getPosition().lng();
-    console.log("for loop: " + i + " lat: "+totalLng)
+    console.log("for loop: " + i + " lng: "+totalLng);
   }
   var latAvg = totalLat/markers.length;
   var lngAvg = totalLng/markers.length;
@@ -110,7 +102,17 @@ function middle() {
   console.log("latgAvg= " + latAvg);
   console.log("totalLat= " + totalLat );
   console.log(latAvg + ", " + lngAvg);
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 37.404001, lng: -122.034976},
+    zoom: 13,
+    mapTypeId: 'roadmap'
+  });
 
+  var middleMarker = new google.maps.Marker({
+        position: {lat: latAvg, lng: lngAvg},
+        map: map,
+        icon: 'marker.png',
+      });
 }
 
 function clear() {
