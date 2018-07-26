@@ -8,8 +8,8 @@
   var markers = [];
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13,
+    center: {lat: 37.404001, lng: -122.034976},37.404001, -122.034976
+    zoom: 9,
     mapTypeId: 'roadmap'
   });
 
