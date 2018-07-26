@@ -42,3 +42,8 @@ li a:hover {
     background-color: clear;
 }
 
+#DC, #SC, #BC, #KC {
+  display:inline-block;
+  width:24.5%;
+  text-align: center
+}
