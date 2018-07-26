@@ -9,13 +9,22 @@ ul {
     overflow: hidden;
     background-color: navajowhite;
     text-align: center;
+    font-family: calibri;
+}
+
+.left {
+  float: left;
 }
 
 #center {
-  padding-right: 35%;
   float: right;
 }
 
+.center {
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+}
 
 li {
     float: left;
@@ -33,11 +42,6 @@ li a {
 li a:hover {
     background-color: orange;
 }
-
-p {
-  text-align: center;
-}
-
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
@@ -125,46 +129,6 @@ html, body {
   height: 500px;  /* The height is 400 pixels */
   width: 50%;  /* The width is the width of the web page */
  }
-body {
-  background-color: LemonChiffon;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: navajowhite;
-    text-align: center;
-}
-
-#center {
-  padding-right: 35%;
-  float: right;
-}
-
-
-li {
-    float: left;
-}
-
-li a {
-    font-size: 40px;
-    display: block;
-    color: indigo;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: orange;
-}
-
-p {
-  text-align: center;
-}
-
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
