@@ -11,6 +11,12 @@ ul {
     font-family: calibri;
 }
 
+#grouppic {
+  width: 100%;
+  align-content: center;
+
+}
+
 .left {
   float: left;
 }
@@ -36,6 +42,20 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+li a:hover {
+    background-color: clear;
+}
+
+#DC, #SC, #BC, #KC {
+  display:inline-block;
+  width:24.5%;
+  text-align: center;
+  vertical-align: top;
+}
+#allCards{
+  text-align: center;
 }
 
 li a:hover {
