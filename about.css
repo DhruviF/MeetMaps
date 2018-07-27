@@ -1,7 +1,6 @@
 body {
   background: linear-gradient(to right, #6464ed, #6486ed, #6495ed, #64a8ed, darkturquoise, mediumturquoise, turquoise);
 }
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -41,4 +40,14 @@ li a {
 
 li a:hover {
     background-color: clear;
+}
+
+#DC, #SC, #BC, #KC {
+  display:inline-block;
+  width:24.5%;
+  text-align: center;
+  vertical-align: top;
+}
+#allCards{
+  text-align: center;
 }
