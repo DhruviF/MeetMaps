@@ -1,5 +1,5 @@
 body {
-  background-color: LemonChiffon;
+  background: linear-gradient(to right, #6464ed, #6486ed, #6495ed, #64a8ed, darkturquoise, mediumturquoise, turquoise);
 }
 
 ul {
@@ -7,7 +7,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: navajowhite;
+    background-color: clear;
     text-align: center;
     font-family: calibri;
 }
@@ -40,7 +40,7 @@ li a {
 }
 
 li a:hover {
-    background-color: orange;
+    background-color: clear;
 }
 
 p{
