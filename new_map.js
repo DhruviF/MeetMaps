@@ -125,7 +125,7 @@ function clearPage() {
 
 var infowindow;
 
-function initMap() {
+function initMapCafe() {
 
 var pyrmont = middle();
 
@@ -134,29 +134,72 @@ map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13
     });
 
+
+
 infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
       location: pyrmont,
       radius: 5000,
       type: ['cafe']
-    }, callback);
+      //'restaurant','spa','amusement_park','bowling_alley','movie_theater','night_club','shoe_store','shopping_mall'
+    }, callbackCafe);
   }
 
-  function callback(results, status) {
+  function initMapRestaurant() {
+
+  var pyrmont = middle();
+
+  map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 13
+      });
+
+  infowindow = new google.maps.InfoWindow();
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch({
+        location: pyrmont,
+        radius: 5000,
+        type: ['restaurant']
+        //'restaurant','spa','amusement_park','bowling_alley','movie_theater','night_club','shoe_store','shopping_mall'
+      }, callbackRestaurant);
+    }
+
+  function callbackCafe(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
+        createMarkerCafe(results[i]);
       }
     }
   }
 
-  function createMarker(place) {
+  function createMarkerCafe(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
     });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+
+    function callbackRestaurant(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          createMarkerRestaurant(results[i]);
+        }
+      }
+    }
+
+    function createMarkerRestaurant(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
 
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
