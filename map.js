@@ -115,14 +115,10 @@ function middle() {
       });
 }
 
-function clear() {
-        markers(null);
-      }
+function clearPage() {
+       window.location.reload();
+  }
 
-function clear() {
-       clear();
-       markers = [];
-     }
 
      var map;
 
