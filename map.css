@@ -218,16 +218,16 @@ html, body {
  }
 
  .button {
-     background-color: indigo; /* Green */
-     border: none;
-     color: white;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
- }
+    background-color: indigo; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 
 #buttcenter{
-  text-align:center;
+ text-align:center;
 }
