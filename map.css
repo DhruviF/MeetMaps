@@ -216,3 +216,14 @@ html, body {
   height: 500px;  /* The height is 400 pixels */
   width: 50%;  /* The width is the width of the web page */
  }
+
+ .button {
+     background-color: indigo; /* Green */
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+ }
