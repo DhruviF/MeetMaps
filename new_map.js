@@ -117,14 +117,9 @@ map.panTo(middleMarker.getPosition());
 return middleMarker.position;
 }
 
-function clear() {
-    markers(null);
+function clearPage() {
+    window.location.reload();
   }
-
-function clear() {
-   clear();
-   markers = [];
- }
 
 // ADDED THE FOLLOWING
 
