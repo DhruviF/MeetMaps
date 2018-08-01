@@ -217,8 +217,8 @@ html, body {
   width: 50%;  /* The width is the width of the web page */
  }
 
- .button {
-    background-color: indigo; /* Green */
+  .button {
+    background-color: indigo;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -228,6 +228,7 @@ html, body {
     font-size: 16px;
 }
 
-#buttcenter{
+ #buttcenter{
  text-align:center;
 }
+
